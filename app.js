@@ -22,12 +22,12 @@ function getLatLong(requestedLocation) {
     searchGeoCodeURL = baseGeoCodeURL + "&q=" + requestedLocation
     // console.log(searchGeoCodeURL);
 
-
+    //nested ajax calls - one to open cage to get lat and long
     $.when($.ajax({
         url: searchGeoCodeURL,
         method: "GET"
     }))
-
+        //open cage js promise
         .then(function (geoCodeData) {
             // console.log("this is geocode data", geoCodeData);
             // console.log(searchGeoCodeURL);
@@ -42,12 +42,12 @@ function getLatLong(requestedLocation) {
 
             searchWeatherURL = baseWeatherURL + "&lon=" + long + "&lat=" + lat;
             console.log(searchWeatherURL);
-
+            //this ajax call waits until the first one comes back with the lat and long to run
             $.ajax({
                 url: searchWeatherURL,
                 method: "GET"
             })
-
+                //current weather js promise
                 .then(function (weatherData) {
                     console.log("this is weather data", weatherData);
                     currentTemp = weatherData.current.temp;
@@ -95,6 +95,32 @@ function getLatLong(requestedLocation) {
                         uvi.addClass("uvExtremelyHigh")
                     }
 
+                    //five day forecast
+
+                    // console.log(weatherData.daily[0])
+                    for (var i = 0; i < 6; i++) {
+                        let fiveDayIcon = weatherData.daily[i].weather[0].icon;
+                        // console.log(fiveDayIcon);
+                        let fiveDayWeatherIcon = "http://openweathermap.org/img/wn/" + fiveDayIcon + ".png"
+                        let fiveDayTemp = weatherData.daily[i].temp.day;
+                        let fiveDayFeelsLike = weatherData.daily[i].feels_like.day;
+                        let fiveDayHumidity = weatherData.daily[i].humidity;
+
+                        let fiveDayTempCelsius = (fiveDayTemp - 273.15);
+                        let fiveDayTempFahrenheit = (((fiveDayTemp - 273.15) * 1.8) + 32);
+
+                        let fiveDayFeelsLikeTempCelsius = (fiveDayFeelsLike - 273.15);
+                        let fiveDayFeelsLikeTempFahrenheit = (((fiveDayFeelsLike - 273.15) * 1.8) + 32);
+
+                        let fiveDayDiv = $("#day-" + i);
+
+                        let displayIcon = fiveDayDiv.append(`<img SameSite="none">`);
+                        displayIcon.children().attr("src", fiveDayWeatherIcon);
+                        fiveDayDiv.append("<p>", "Temp: " + fiveDayTempFahrenheit.toFixed(2) + "*F/" + fiveDayTempCelsius.toFixed(2) + "*C");
+                        fiveDayDiv.append("<p>", "Feels Like: " + fiveDayFeelsLikeTempFahrenheit.toFixed(2) + "*F/" + fiveDayFeelsLikeTempCelsius.toFixed(2) + "*C")
+                        fiveDayDiv.append("<p>", "Humidity: " + fiveDayHumidity + "%");
+
+                    }
                 });
         });
 }

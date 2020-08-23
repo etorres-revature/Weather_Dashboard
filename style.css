@@ -14,6 +14,7 @@ div#day-1, div#day-2, div#day-3, div#day-4, div#day-5 {
     height: 250px;
     width: 175px;
     background-color: blue;
+    color: whitesmoke;
     margin-right: 12px;
     border-radius: 25px;
     display: inline-block;
