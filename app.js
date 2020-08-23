@@ -16,9 +16,11 @@ let lat = 0;
 let long = 0;
 
 function getLatLong(requestedLocation) {
-
+console.log("inside get lat long function");
     searchGeoCodeURL = baseGeoCodeURL + "&q=" +requestedLocation
-    
+    console.log(searchGeoCodeURL);
+
+
     $.ajax({
         url: searchGeoCodeURL,
         method: "GET"
@@ -27,5 +29,15 @@ function getLatLong(requestedLocation) {
     .then(function(geoCodeData) {
         console.log(geoCodeData);
         console.log(searchGeoCodeURL);
-    })
+    });
 }
+
+$("#searchBtn").on("click", function(){
+    alert("you're button is working!!")
+
+    let location = $("#inputSearch").val().trim();
+    console.log(location);
+
+    getLatLong(location);
+
+});
