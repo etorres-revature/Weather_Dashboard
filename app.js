@@ -18,6 +18,7 @@ let lat = 0;
 let long = 0;
 
 function getLatLong(requestedLocation) {
+    getEmpty();
     console.log("inside get lat long function");
     searchGeoCodeURL = baseGeoCodeURL + "&q=" + requestedLocation
     // console.log(searchGeoCodeURL);
@@ -78,11 +79,11 @@ function getLatLong(requestedLocation) {
                     let wind = $("#current-wind");
                     let uvi = $("#uvi");
 
-                    feelsLike.append("<p style='display: inline; padding-left: 12px'>", feelsLikeTempFahrenheit.toFixed(2) + "*F / " + feelsLikeTempCelsius.toFixed(2) + "*C ").show;
-                    temp.append("<p style='display: inline; padding-left: 12px'>", tempFahrenheit.toFixed(2) + "*F / " + tempCelsius.toFixed(2) + "*C ").show
-                    humidity.append("<p style='display: inline; padding-left: 12px'>", currentHumidity + "%");
-                    wind.append("<p style='display: inline; padding-left: 12px'>", currentWindSpeed + " meter/second")
-                    uvi.append("<p style='display: inline; padding-left: 12px'>", currentUVI);
+                    feelsLike.append("<p style='display: inline; padding-left: 12px'>", "FEELS-LIKE: "+feelsLikeTempFahrenheit.toFixed(2) + "*F / " + feelsLikeTempCelsius.toFixed(2) + "*C ").show;
+                    temp.append("<p style='display: inline; padding-left: 12px'>", "TEMPERATURE: "+ tempFahrenheit.toFixed(2) + "*F / " + tempCelsius.toFixed(2) + "*C ").show
+                    humidity.append("<p style='display: inline; padding-left: 12px'>", "Humidity: "+currentHumidity + "%");
+                    wind.append("<p style='display: inline; padding-left: 12px'>", "Wind speed: "+currentWindSpeed + " meter/second")
+                    uvi.append("<p style='display: inline; padding-left: 12px'>", "UV Index: "+currentUVI);
                     icon.css("display", "inline-block");
 
                     if (currentUVI < 6) {
@@ -98,7 +99,7 @@ function getLatLong(requestedLocation) {
                     //five day forecast
 
                     // console.log(weatherData.daily[0])
-                    for (var i = 0; i < 6; i++) {
+                    for (var i = 0; i < 5; i++) {
                         let fiveDayIcon = weatherData.daily[i].weather[0].icon;
                         // console.log(fiveDayIcon);
                         let fiveDayWeatherIcon = "http://openweathermap.org/img/wn/" + fiveDayIcon + ".png"
@@ -112,7 +113,7 @@ function getLatLong(requestedLocation) {
                         let fiveDayFeelsLikeTempCelsius = (fiveDayFeelsLike - 273.15);
                         let fiveDayFeelsLikeTempFahrenheit = (((fiveDayFeelsLike - 273.15) * 1.8) + 32);
 
-                        let fiveDayDiv = $("#day-" + i);
+                        let fiveDayDiv = $("#day-" + (i + 1));
 
                         let displayIcon = fiveDayDiv.append(`<img SameSite="none">`);
                         displayIcon.children().attr("src", fiveDayWeatherIcon);
@@ -125,11 +126,31 @@ function getLatLong(requestedLocation) {
         });
 }
 
+function getEmpty(){
+
+    $("#feels-like").empty();
+    $("#current-temp").empty();
+    $("#current-humidity").empty();
+    $("#current-wind").empty();
+    $("#uvi").empty();
+
+    for (let i = 1; i < 6; i++) {
+        $("#day-"+i).empty();
+    }
+}
+
 $("#searchBtn").on("click", function () {
 
     let location = $("#inputSearch").val().trim();
     // console.log(location);
     getLatLong(location);
 
+});
+
+$(".list-group-item").on("click", function(){
+
+    let location = $(this).data("location");
+    //console.log(location);
+    getLatLong(location);
 });
 
