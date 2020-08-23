@@ -14,3 +14,9 @@ div#day-1, div#day-2, div#day-3, div#day-4, div#day-5 {
     border-radius: 25px;
     display: inline-block;
 }
+
+#current-city {
+    font-weight: 725px;
+    text-decoration: underline;
+    text-align: center;
+}
