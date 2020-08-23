@@ -60,21 +60,40 @@ function getLatLong(requestedLocation) {
                     console.log("current uvi", currentUVI);
                     currentFeelsLike = weatherData.current.feels_like;
                     console.log("current feels like", currentFeelsLike);
-                    // currentWeatherIcon = weatherData.weather[0].currentWeather.icon;
+                    currentWeatherIcon = weatherData.current.weather[0].icon;
+                    currentWeatherIconURL = "http://openweathermap.org/img/wn/" + currentWeatherIcon + ".png"
+                    console.log("this is current icon", currentWeatherIcon);
+
+                    let tempCelsius = (currentTemp - 273.15);
+                    let tempFahrenheit = (((currentTemp - 273.15) * 1.8) + 32);
+
+                    let feelsLikeTempCelsius = (currentFeelsLike - 273.15);
+                    let feelsLikeTempFahrenheit = (((currentFeelsLike - 273.15) * 1.8) + 32);
 
                     let city = $("#current-city").text(currentCity);
                     let feelsLike = $("#feels-like");
                     let temp = $("#current-temp");
-                    // let icon =  $("#current-weather-icon").attr("src", currentWeatherIcon).attr("style", "display: block;");
+                    let icon = $("#current-weather-icon").attr("src", currentWeatherIconURL);
                     let humidity = $("#current-humidity");
                     let wind = $("#current-wind");
                     let uvi = $("#uvi");
 
-                    feelsLike.append("<p style='display: inline; padding-left: 12px'>", currentFeelsLike).show;
-                    temp.append("<p style='display: inline; padding-left: 12px'>", currentTemp).show
-                    humidity.append("<p style='display: inline; padding-left: 12px'>", currentHumidity);
-                    wind.append("<p style='display: inline; padding-left: 12px'>", currentWindSpeed)
+                    feelsLike.append("<p style='display: inline; padding-left: 12px'>", feelsLikeTempFahrenheit.toFixed(2) + "*F / " + feelsLikeTempCelsius.toFixed(2) + "*C ").show;
+                    temp.append("<p style='display: inline; padding-left: 12px'>", tempFahrenheit.toFixed(2) + "*F / " + tempCelsius.toFixed(2) + "*C ").show
+                    humidity.append("<p style='display: inline; padding-left: 12px'>", currentHumidity + "%");
+                    wind.append("<p style='display: inline; padding-left: 12px'>", currentWindSpeed + " meter/second")
                     uvi.append("<p style='display: inline; padding-left: 12px'>", currentUVI);
+                    icon.css("display", "inline-block");
+
+                    if (currentUVI < 6) {
+                        uvi.addClass("uvLow");
+                    } else if (currentUVI >= 6 && currentUVI <= 7) {
+                        uvi.addClass("uvHigh")
+                    } else if (currentUVI > 7 && currentUVI < 11) {
+                        uvi.addClass("uvVeryHigh")
+                    } else if (currentUVI >= 11) {
+                        uvi.addClass("uvExtremelyHigh")
+                    }
 
                 });
         });

@@ -17,49 +17,57 @@
         <h1>Weather Dashboard</h1>
     </header>
 
-    <aside class="float-left border border-dark m-1 p-3">
-        <h4 class="">Search for a City:</h4>
-        <div class="input-group mb-3">
-            <input id="inputSearch" type="text" class="form-control" placeholder="Enter a city here" aria-label="search-city"
-                aria-describedby="basic-addon2">
-            <div class="input-group-append">
-                <button id="searchBtn" class="btn btn-outline-secondary" type="button">Button</button>
+    <div class="container-fluid w-100">
+        <aside class=" w-25 container-sm container-md container-lg float-left border border-dark">
+            <h4 class="">Search for a City:</h4>
+            <div class="input-group mb-3">
+                <input id="inputSearch" type="text" class="form-control" placeholder="Enter a city here"
+                    aria-label="search-city" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <button id="searchBtn" class="btn btn-outline-secondary" type="button">Button</button>
+                </div>
             </div>
-        </div>
-        <br>
-        <div class="card">
-            <ul class="list-group list-group-flush">
-                <li id="ausTX" class="list-group-item" data-location="Austin, TX">Austin</li>
-                <li id="nyNY" class="list-group-item" data-location="New York, NY">New York</li>
-                <li id="miamiFL" class="list-group-item" data-location="Miami, FL">Miami</li>
-                <li id="noLA" class="list-group-item" data-locaiton="New Orleans, LA">New Orleans</li>
-                <li id="seattleWA" class="list-group-item" data-location="Seattle, WA">Seattle</li>
-                <li id="laCA" class="list-group-item" data-location="Los Angeles, CA">Los Angeles</li>
-                <li id="chiIL" class="list-group-item" data-location="Chicago, IL">Chicago</li>
-                <li id="denverCO" class="list-group-item" data-location="Denver, CO">Denver</li>
-                <li id="stLouisMO" class="list-group-item" data-location="St. Louis, MO">St. Louis</li>
-            </ul>
-        </div>
-    </aside>
+            <br>
+            <div class="card">
+                <ul class="list-group list-group-flush">
+                    <li id="ausTX" class="list-group-item" data-location="Austin, TX">Austin</li>
+                    <li id="nyNY" class="list-group-item" data-location="New York, NY">New York</li>
+                    <li id="miamiFL" class="list-group-item" data-location="Miami, FL">Miami</li>
+                    <li id="noLA" class="list-group-item" data-locaiton="New Orleans, LA">New Orleans</li>
+                    <li id="seattleWA" class="list-group-item" data-location="Seattle, WA">Seattle</li>
+                    <li id="laCA" class="list-group-item" data-location="Los Angeles, CA">Los Angeles</li>
+                    <li id="chiIL" class="list-group-item" data-location="Chicago, IL">Chicago</li>
+                    <li id="denverCO" class="list-group-item" data-location="Denver, CO">Denver</li>
+                    <li id="stLouisMO" class="list-group-item" data-location="St. Louis, MO">St. Louis</li>
+                </ul>
+            </div>
+        </aside>
 
-    <main class="weather-display float-right border border-dark m-1 p-4">
-        <h2>Current Conditions:</h2>
-        <h3 id="current-city">City Date:</h3>
-        <h3 id="feels-like">Feels Like:</h2>
-        <h3 id="current-temp">Temperature: </h4>
-        <img id="current-weather-icon" src="#" style="display: none;" alt="current weather icon">
-        <h4 id="current-humidity">Humidity:</h4>
-        <h4 id="current-wind">wind speed: </h4>
-        <h4 id="uvi">UV Index:     </h4>
-    </main>
+        <main class="w-72 container-sm container-md container-lg weather-display float-right border border-dark">
+            <h2 id="current-cond">Current Conditions:</h2><img id="current-weather-icon" SameSite="none"
+                src="#" style="display: none;" alt="current weather icon">
+            <h3 id="current-city" class="p-2">City Date:</h3>
+            <br />
+            <section id="temp" class="p-3" style="display:inline-block;">
+                <h3 id="feels-like">Feels Like:</h3>
+                <h3 id="current-temp">Temperature: </h3>
+            </section>
+            <section id="other" class="p-2" style="display:inline-block;">
+                <img id="current-weather-icon" src="#" style="display: none;" alt="current weather icon">
+                <h4 id="current-humidity">Humidity:</h4>
+                <h4 id="current-wind">wind speed: </h4>
+                <h4 id="uvi">UV Index: </h4>
+            </section>
+        </main>
 
-    <div class="container float-right m-1 text-center">
-        <h2 class="text-left">Five Day Forecast:</h2>
-        <div id="day-1"></div>
-        <div id="day-2"></div>
-        <div id="day-3"></div>
-        <div id="day-4"></div>
-        <div id="day-5"></div>
+        <div class="w-72 five-day container-sm container-md container-lg float-right text-center">
+            <h2 class="text-left">Five Day Forecast:</h2>
+            <div id="day-1"></div>
+            <div id="day-2"></div>
+            <div id="day-3"></div>
+            <div id="day-4"></div>
+            <div id="day-5"></div>
+        </div>
     </div>
 
 

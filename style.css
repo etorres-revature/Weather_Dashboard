@@ -1,9 +1,13 @@
 aside {
-    width: 28%
+    width: 28.5%;
 }
 
-main, .container {
-   width: 68.5%
+.weather-display, .five-day {
+    width: 68.5%;
+}
+
+.table-wrapper .column {
+    display: table-cell;
 }
 
 div#day-1, div#day-2, div#day-3, div#day-4, div#day-5 {
@@ -20,3 +24,25 @@ div#day-1, div#day-2, div#day-3, div#day-4, div#day-5 {
     text-decoration: underline;
     text-align: center;
 }
+
+#current-cond {
+    display: inline-block;
+    padding-right: 45px;
+}
+
+.uvLow {
+    background-color: greenyellow;
+}
+
+.uvHigh {
+    background-color: yellow;
+}
+
+.uvVeryHigh {
+    background-color: darkorange;
+}
+
+.uvExtremelyHigh {
+    background-color: red;
+}
+
