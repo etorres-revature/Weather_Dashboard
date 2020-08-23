@@ -6,4 +6,26 @@
 
 const baseWeatherURL = `https://api.openweathermap.org/data/2.5/onecall?appid=340e329562e29bd2ff2b681d0bf2d492`;
 const baseGeoCodeURL = `https://api.opencagedata.com/geocode/v1/json?key=ef6e5295fc1b4624b73a959b2fee725e&language=en&pretty=1`;
-var
+let currentCity = '';
+let currentDate = '';
+let currentTemp = '';
+let currentHumidity = '';
+let currentWindSpeed = '';
+let uvIndex = '';
+let lat = 0;
+let long = 0;
+
+function getLatLong(requestedLocation) {
+
+    searchGeoCodeURL = baseGeoCodeURL + "&q=" +requestedLocation
+    
+    $.ajax({
+        url: searchGeoCodeURL,
+        method: "GET"
+    })
+
+    .then(function(geoCodeData) {
+        console.log(geoCodeData);
+        console.log(searchGeoCodeURL);
+    })
+}
