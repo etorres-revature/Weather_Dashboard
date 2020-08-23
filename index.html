@@ -13,6 +13,53 @@
 
 <body>
 
+    <header class="text-center">
+        <h1>Weather Dashboard</h1>
+    </header>
+
+    <aside class="float-left border border-dark m-1 p-3">
+        <h4>Search for a City:</h4>
+        <div class="input-group mb-3">
+            <input id="inputSearch" type="text" class="form-control" placeholder="Enter a city here" aria-label="search-city"
+                aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <button id="searchBtn" class="btn btn-outline-secondary" type="button">Button</button>
+            </div>
+        </div>
+        <br>
+        <div class="card">
+            <ul class="list-group list-group-flush">
+                <li id="ausTX" class="list-group-item" data-location="Austin, TX">Austin</li>
+                <li id="nyNY" class="list-group-item" data-location="New York, NY">New York</li>
+                <li id="miamiFL" class="list-group-item" data-location="Miami, FL">Miami</li>
+                <li id="noLA" class="list-group-item" data-locaiton="New Orleans, LA">New Orleans</li>
+                <li id="seattleWA" class="list-group-item" data-location="Seattle, WA">Seattle</li>
+                <li id="laCA" class="list-group-item" data-location="Los Angeles, CA">Los Angeles</li>
+                <li id="chiIL" class="list-group-item" data-location="Chicago, IL">Chicago</li>
+                <li id="denverCO" class="list-group-item" data-location="Denver, CO">Denver</li>
+                <li id="stLouisMO" class="list-group-item" data-location="St. Louis, MO">St. Louis</li>
+            </ul>
+        </div>
+    </aside>
+
+    <main class=" float-right border border-dark m-1 p-4">
+        <h2>Current Conditions</h2>
+        <h3>City Date</h3>
+        <h4>Temperature</h4>
+        <h4>Humidity</h4>
+        <h4>wind speed</h4>
+        <h4>UV Index</h4>
+    </main>
+
+    <div class="container float-right m-1 text-center">
+        <h2 class="text-left:">Five Day Forecast:</h2>
+        <div id="day-1"></div>
+        <div id="day-2"></div>
+        <div id="day-3"></div>
+        <div id="day-4"></div>
+        <div id="day-5"></div>
+    </div>
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
@@ -22,7 +69,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
-        <script src="./app.js"></script>
+    <script src="./app.js"></script>
 </body>
 
 </html>
