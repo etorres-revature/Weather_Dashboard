@@ -8,6 +8,7 @@
 $(document).ready(function () {
     const baseWeatherURL = `https://api.openweathermap.org/data/2.5/onecall?appid=340e329562e29bd2ff2b681d0bf2d492&exclude=hourly,minutely`;
     const baseGeoCodeURL = `https://api.opencagedata.com/geocode/v1/json?key=ef6e5295fc1b4624b73a959b2fee725e&language=en&pretty=1`;
+    const todayDate = moment().format("MMM Do YYYY")
     let currentCity = '';
     let currentDate = '';
     let currentTemp = '';
@@ -83,6 +84,7 @@ $(document).ready(function () {
                         let humidity = $("#current-humidity");
                         let wind = $("#current-wind");
                         let uvi = $("#uvi");
+                        let date = $("#current-date");
 
                         feelsLike.append("<p style='display: inline;'>", "FEELS-LIKE: " + feelsLikeTempFahrenheit.toFixed(2) + "*F / " + feelsLikeTempCelsius.toFixed(2) + "*C ").show;
                         temp.append("<p style='display: inline;'>", "TEMPERATURE: " + tempFahrenheit.toFixed(2) + "*F / " + tempCelsius.toFixed(2) + "*C ").show
@@ -91,6 +93,7 @@ $(document).ready(function () {
                         uvi.append("<p id='uvIndexPara' data-uvi=" + currentUVI + " style='display: inline; padding-left: 12px'>", "UV Index: " + currentUVI);
                         uvi.attr("value", currentUVI);
                         icon.css("display", "inline-block");
+                        date.append(todayDate);
 
                         //five day forecast
 
@@ -110,7 +113,7 @@ $(document).ready(function () {
                             let fiveDayFeelsLikeTempFahrenheit = (((fiveDayFeelsLike - 273.15) * 1.8) + 32);
 
                             let fiveDayDiv = $("#day-" + (i + 1));
-
+                            fiveDayDiv.append("<p>", todayDate)
                             let displayIcon = fiveDayDiv.append(`<img SameSite="none">`);
                             displayIcon.children().attr("src", fiveDayWeatherIcon);
                             fiveDayDiv.append("<p>", "Temp: " + fiveDayTempFahrenheit.toFixed(2) + "*F/" + fiveDayTempCelsius.toFixed(2) + "*C");
