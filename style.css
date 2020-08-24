@@ -10,7 +10,9 @@ header {
     height: 9%;
     background-color: darkgrey;
     font-weight: 750;
+    color: seashell;
 }
+
 
 aside, main, div.five-day {
     background-color: oldlace;
