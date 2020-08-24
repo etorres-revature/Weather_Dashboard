@@ -198,14 +198,16 @@ $(document).ready(function () {
     let uvi = $("#uvi");
     console.log("uvi", uviNum)
     let uvIndP = $("#uvIndexPara");
-    if (uviNum < 6) {
+    if (uviNum >= 0 && uviNum <= 2) {
       uvi.css("background", "greenyellow");
+    } else if (uviNum >= 3 && uviNum <= 5) {
+      uvi.css("background", "yellow");
     } else if (uviNum >= 6 && uviNum <= 7) {
-      uvi.css("background", "yello");
-    } else if (uviNum > 7 && uviNum < 11) {
       uvi.css("background", "darkorange");
-    } else if (uviNum >= 11) {
-      uvi.css("background", "red");
+    } else if (uviNum >= 8 && uviNum <= 10) {
+      uvi.css("background", "orangered");
+    }else if (uviNum > 11) {
+        uvi.css("background", "darkorchid")
     }
   }
 
