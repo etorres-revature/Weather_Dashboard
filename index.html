@@ -137,7 +137,8 @@
 
     <div class="w-100 clearfix mt-5">
       <aside
-        class="w-25 container-sm container-md container-lg float-left border border-dark p-3 m-5">
+        class="w-25 container-sm container-md container-lg float-left border border-dark p-3 m-5"
+      >
         <h4 class="">Search for a City:</h4>
         <div class="input-group mb-3">
           <input
@@ -160,7 +161,8 @@
           </div>
         </div>
         <br />
-        <div class="card">
+        <h4>Popular Cities:</h4>
+        <div class="card mb-3">
           <ul class="list-group list-group-flush">
             <li id="ausTX" class="list-group-item" data-location="Austin, TX">
               Austin
@@ -211,6 +213,10 @@
             </li>
           </ul>
         </div>
+        <h4 style="display: none;">Previous Searches:</h4>
+        <div class="card" style="display: none;">
+          <ul class="list-group list-group-flush"></ul>
+        </div>
       </aside>
 
       <main
@@ -235,7 +241,7 @@
           <section
             id="other"
             class="d-inline-block"
-            style="text-align: left; margin-left: 150px"
+            style="text-align: left; margin-left: 150px;"
           >
             <h4 id="current-humidity">Humidity:</h4>
             <h4 id="current-wind">wind speed:</h4>
