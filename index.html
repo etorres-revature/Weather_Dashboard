@@ -8,16 +8,67 @@
     <link rel="icon" type="" href="#" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./style.css" />
 </head>
 
 <body>
 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="https://stardewvalley.net" target="_blank" rel="noopener noreferrer">Eric D.
+            Torres</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="ml-auto">
+                <ul class="navbar-nav w-100">
+                    <li class="nav-item active ml-auto">
+                        <a class="nav-link" href="https://etorres-revature.github.io/Work_Day_Scheduler/">Day Planner<span class="sr-only">Day Planner</span></a>
+                    </li> 
+                    <li class="nav-item active ml-auto">
+                        <a class="nav-link" href="https://etorres-revature.github.io/To_Do-Local_Storage/">Task List<span class="sr-only">Task List</span></a>
+                    </li> 
+                    <li class="nav-item active ml-auto">
+                        <a class="nav-link" href="https://etorres-revature.github.io/New_York_Times_API_Search/">Search NY Times<span class="sr-only">Search NY Times</span></a>
+                    </li>
+                    <li class="nav-item active ml-auto">
+                        <a class="nav-link" href="https://etorres-revature.github.io/Password_Generator/">Password Generator <span class="sr-only">Password Generator</span></a>
+                    </li>
+                    <li class="nav-item active ml-auto">
+                        <a class="nav-link" href="https://etorres-revature.github.io/JavaScript_Code_Quiz_Challenge/">JS
+                            Code Quiz<span class="sr-only">JS Code Quiz</span></a>
+                    </li>
+                    <li class="nav-item dropdown ml-auto">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            More Pages
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <p>RESPONSIVE PORTFOLIO:</p>
+                            <a class="nav-link" href="https://etorres-revature.github.io/Responsive_Portfolio/">Home <span class="sr-only">Home</span></a>
+                            <a class="dropdown-item" href="https://etorres-revature.github.io/Responsive_Portfolio/about_me.html">About Me</a>
+                            <a class="dropdown-item" href="https://etorres-revature.github.io/Responsive_Portfolio/portfolio.html">Portfolio</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="https://etorres-revature.github.io/Responsive_Portfolio/contact.html">Contact</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- <form class="form-inline my-2 my-lg-0"> -->
+            <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
+            <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+            <!-- </form> -->
+        </div>
+    </nav>
+
     <header class="text-center">
         <h1>Weather Dashboard</h1>
     </header>
 
-    <div class="container-fluid w-100">
+    <div class="container-fluid w-100 clearfix">
         <aside class=" w-25 container-sm container-md container-lg float-left border border-dark">
             <h4 class="">Search for a City:</h4>
             <div class="input-group mb-3">
@@ -44,8 +95,8 @@
         </aside>
 
         <main class="w-72 container-sm container-md container-lg weather-display float-right border border-dark">
-            <h2 id="current-cond">Current Conditions:</h2><img id="current-weather-icon" SameSite="none"
-                src="#" style="display: none;" alt="current weather icon">
+            <h2 id="current-cond">Current Conditions:</h2><img id="current-weather-icon" SameSite="none" src="#"
+                style="display: none;" alt="current weather icon">
             <h3 id="current-city" class="p-2">City Date:</h3>
             <br />
             <section id="temp" class="p-3" style="display:inline-block;">
@@ -69,6 +120,38 @@
         </div>
     </div>
 
+    <div class="w-100 clearfix" style="height: 85px"></div>
+
+    <footer class=" clearfix sticky-footer" style="display: contents; border-color: black; background-color: grey">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <h3>
+                        Visit me on social media:
+                    </h3>
+                </div>
+            </div>
+            <!-- footer social media classes and styling from https://www.w3schools.com/howto/howto_css_social_media_buttons.asp -->
+            <div class="row">
+                <div class="col" id="social-media">
+                    <a href="https://www.linkedin.com/in/ericdtorres/" class="fa fa-linkedin" target="_blank"  rel="noopener noreferrer"></a>
+                    <a href="https://github.com/etorres-revature" class="fa fa-github" target="_blank" rel="noopener noreferrer"></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p id="e_mail">E-mail: <a href="mailto:etorresnotary@gmail.com">etorresnotary@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p id="copyright">
+                        &copy; 2020 Eric D. Torres Productions
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>

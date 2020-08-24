@@ -47,3 +47,42 @@ div#day-1, div#day-2, div#day-3, div#day-4, div#day-5 {
     background-color: red;
 }
 
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.fa:hover {
+    opacity: .65;
+}
+
+.fa-linkedin {
+    background: #007bb5;
+    color: white;
+    margin-right: 5px;
+}
+
+.fa-github {
+    background: #2c4762;
+    color: white;
+    margin-left: 5px;
+}
+
+#copyright {
+    text-align: center;
+}
+
+#social-media {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+#e_mail {
+    text-align: center
+}
+

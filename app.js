@@ -145,6 +145,8 @@ $("#searchBtn").on("click", function () {
     // console.log(location);
     getLatLong(location);
 
+    localStorage.setItem("lastLocation", location)
+
 });
 
 $(".list-group-item").on("click", function(){
@@ -152,5 +154,6 @@ $(".list-group-item").on("click", function(){
     let location = $(this).data("location");
     //console.log(location);
     getLatLong(location);
+    localStorage.setItem("lastLocation", location);
 });
 
