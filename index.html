@@ -1,184 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="icon" type="image/png" href="./assets/images/favicon/Weather-Partly-Cloudy-Rain-icon.png" />
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="icon"
+      type="image/png"
+      href="./assets/images/favicon/Weather-Partly-Cloudy-Rain-icon.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="./style.css" />
-</head>
+  </head>
 
-<body>
-
+  <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="https://stardewvalley.net" target="_blank" rel="noopener noreferrer">Eric D.
-            Torres</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+      <a
+        class="navbar-brand"
+        href="https://stardewvalley.net"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Eric D. Torres</a
+      >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="ml-auto">
-                <ul class="navbar-nav w-100">
-                    <li class="nav-item active ml-auto">
-                        <a class="nav-link" href="https://etorres-revature.github.io/Work_Day_Scheduler/">Day
-                            Planner<span class="sr-only">Day Planner</span></a>
-                    </li>
-                    <li class="nav-item active ml-auto">
-                        <a class="nav-link" href="https://etorres-revature.github.io/To_Do-Local_Storage/">Task
-                            List<span class="sr-only">Task List</span></a>
-                    </li>
-                    <li class="nav-item active ml-auto">
-                        <a class="nav-link" href="https://etorres-revature.github.io/New_York_Times_API_Search/">Search
-                            NY Times<span class="sr-only">Search NY Times</span></a>
-                    </li>
-                    <li class="nav-item active ml-auto">
-                        <a class="nav-link" href="https://etorres-revature.github.io/Password_Generator/">Password
-                            Generator <span class="sr-only">Password Generator</span></a>
-                    </li>
-                    <li class="nav-item active ml-auto">
-                        <a class="nav-link" href="https://etorres-revature.github.io/JavaScript_Code_Quiz_Challenge/">JS
-                            Code Quiz<span class="sr-only">JS Code Quiz</span></a>
-                    </li>
-                    <li class="nav-item dropdown ml-auto">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Responsive Portfolio:
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="https://etorres-revature.github.io/Responsive_Portfolio/">Home
-                                Page</a>
-                            <a class="dropdown-item"
-                                href="https://etorres-revature.github.io/Responsive_Portfolio/about_me.html">About
-                                Me</a>
-                            <a class="dropdown-item"
-                                href="https://etorres-revature.github.io/Responsive_Portfolio/portfolio.html">Portfolio</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item"
-                                href="https://etorres-revature.github.io/Responsive_Portfolio/contact.html">Contact</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <!-- <form class="form-inline my-2 my-lg-0"> -->
-            <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
-            <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
-            <!-- </form> -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="ml-auto">
+          <ul class="navbar-nav w-100">
+            <li class="nav-item active ml-auto">
+              <a
+                class="nav-link"
+                href="https://etorres-revature.github.io/Work_Day_Scheduler/"
+                >Day Planner<span class="sr-only">Day Planner</span></a
+              >
+            </li>
+            <li class="nav-item active ml-auto">
+              <a
+                class="nav-link"
+                href="https://etorres-revature.github.io/To_Do-Local_Storage/"
+                >Task List<span class="sr-only">Task List</span></a
+              >
+            </li>
+            <li class="nav-item active ml-auto">
+              <a
+                class="nav-link"
+                href="https://etorres-revature.github.io/New_York_Times_API_Search/"
+                >Search NY Times<span class="sr-only">Search NY Times</span></a
+              >
+            </li>
+            <li class="nav-item active ml-auto">
+              <a
+                class="nav-link"
+                href="https://etorres-revature.github.io/Password_Generator/"
+                >Password Generator
+                <span class="sr-only">Password Generator</span></a
+              >
+            </li>
+            <li class="nav-item active ml-auto">
+              <a
+                class="nav-link"
+                href="https://etorres-revature.github.io/JavaScript_Code_Quiz_Challenge/"
+                >JS Code Quiz<span class="sr-only">JS Code Quiz</span></a
+              >
+            </li>
+            <li class="nav-item dropdown ml-auto">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Responsive Portfolio:
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a
+                  class="dropdown-item"
+                  href="https://etorres-revature.github.io/Responsive_Portfolio/"
+                  >Home Page</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://etorres-revature.github.io/Responsive_Portfolio/about_me.html"
+                  >About Me</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="https://etorres-revature.github.io/Responsive_Portfolio/portfolio.html"
+                  >Portfolio</a
+                >
+                <div class="dropdown-divider"></div>
+                <a
+                  class="dropdown-item"
+                  href="https://etorres-revature.github.io/Responsive_Portfolio/contact.html"
+                  >Contact</a
+                >
+              </div>
+            </li>
+          </ul>
         </div>
+        <!-- <form class="form-inline my-2 my-lg-0"> -->
+        <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
+        <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+        <!-- </form> -->
+      </div>
     </nav>
 
     <header class="text-center">
-        <h1>Weather Dashboard</h1>
+      <h1>Weather Dashboard</h1>
     </header>
 
     <div class="container-fluid w-100 clearfix mt-5">
-        <aside class="w-25 container-sm container-md container-lg float-left border border-dark p-3 m-5">
-            <h4 class="">Search for a City:</h4>
-            <div class="input-group mb-3">
-                <input id="inputSearch" type="text" style="height: 50px;" class="form-control"
-                    placeholder="Enter a city here" aria-label="search-city" aria-describedby="basic-addon2">
-                <div class="input-group-append">
-                    <button id="searchBtn" class="btn btn-info" type="button">
-                        <img src="./assets/images/favicon/icons8-search-64.png" alt="search magnifying glass"
-                            id="search-image" />
-                    </button>
-                </div>
-            </div>
-            <br>
-            <div class="card">
-                <ul class="list-group list-group-flush">
-                    <li id="ausTX" class="list-group-item" data-location="Austin, TX">Austin</li>
-                    <li id="nyNY" class="list-group-item" data-location="New York, NY">New York</li>
-                    <li id="miamiFL" class="list-group-item" data-location="Miami, FL">Miami</li>
-                    <li id="noLA" class="list-group-item" data-location="New Orleans, LA">New Orleans</li>
-                    <li id="seattleWA" class="list-group-item" data-location="Seattle, WA">Seattle</li>
-                    <li id="laCA" class="list-group-item" data-location="Los Angeles, CA">Los Angeles</li>
-                    <li id="chiIL" class="list-group-item" data-location="Chicago, IL">Chicago</li>
-                    <li id="denverCO" class="list-group-item" data-location="Denver, CO">Denver</li>
-                    <li id="stLouisMO" class="list-group-item" data-location="St. Louis, MO">St. Louis</li>
-                </ul>
-            </div>
-        </aside>
-
-        <main class="w-100 container-sm container-md container-lg weather-display float-right border border-dark m-3">
-            <h2 id="current-cond">Current Conditions:</h2><img id="current-weather-icon" SameSite="none" src="#"
-                style="display: none;" alt="current weather icon">
-                <h3 id="current-date" class="text-center"></h3>
-            <h2 id="current-city" class="p-2">City Date:</h2>
-            <br />
-            <section id="temp" style="text-align: left; display:inline-block;">
-                <h3 id="feels-like">Feels Like:</h3>
-                <h3 id="current-temp">Temperature: </h3>
-            </section>
-            <section id="other" style="margin-left: 225px; text-align: left; display:inline-block;">
-                <h4 id="current-humidity">Humidity:</h4>
-                <h4 id="current-wind">wind speed: </h4>
-                <h4 id="uvi">UV Index: </h4>
-            </section>
-        </main>
-
-        <div class="w-75 five-day container-sm container-md container-lg float-right text-center m-3 p-3">
-            <h2 class="text-left">Five-Day Forecast:</h2>
-            <div id="day-1"></div>
-            <div id="day-2"></div>
-            <div id="day-3"></div>
-            <div id="day-4"></div>
-            <div id="day-5"></div>
+      <aside
+        class="w-25 container-sm container-md container-lg float-left border border-dark p-3 m-5"
+      >
+        <h4 class="">Search for a City:</h4>
+        <div class="input-group mb-3">
+          <input
+            id="inputSearch"
+            type="text"
+            style="height: 50px;"
+            class="form-control"
+            placeholder="Enter a city here"
+            aria-label="search-city"
+            aria-describedby="basic-addon2"
+          />
+          <div class="input-group-append">
+            <button id="searchBtn" class="btn btn-info" type="button">
+              <img
+                src="./assets/images/favicon/icons8-search-64.png"
+                alt="search magnifying glass"
+                id="search-image"
+              />
+            </button>
+          </div>
         </div>
+        <br />
+        <div class="card">
+          <ul class="list-group list-group-flush">
+            <li id="ausTX" class="list-group-item" data-location="Austin, TX">
+              Austin
+            </li>
+            <li id="nyNY" class="list-group-item" data-location="New York, NY">
+              New York
+            </li>
+            <li id="miamiFL" class="list-group-item" data-location="Miami, FL">
+              Miami
+            </li>
+            <li
+              id="noLA"
+              class="list-group-item"
+              data-location="New Orleans, LA"
+            >
+              New Orleans
+            </li>
+            <li
+              id="seattleWA"
+              class="list-group-item"
+              data-location="Seattle, WA"
+            >
+              Seattle
+            </li>
+            <li
+              id="laCA"
+              class="list-group-item"
+              data-location="Los Angeles, CA"
+            >
+              Los Angeles
+            </li>
+            <li id="chiIL" class="list-group-item" data-location="Chicago, IL">
+              Chicago
+            </li>
+            <li
+              id="denverCO"
+              class="list-group-item"
+              data-location="Denver, CO"
+            >
+              Denver
+            </li>
+            <li
+              id="stLouisMO"
+              class="list-group-item"
+              data-location="St. Louis, MO"
+            >
+              St. Louis
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+      <main
+        class="w-100 container-sm container-md container-lg weather-display float-right border border-dark m-3"
+      >
+        <h2 id="current-cond">Current Conditions:</h2>
+        <img
+          id="current-weather-icon"
+          SameSite="none"
+          src="#"
+          style="display: none;"
+          alt="current weather icon"
+        />
+        <h3 id="current-date" class="text-center"></h3>
+        <h2 id="current-city" class="p-2">City Date:</h2>
+        <br />
+        <div class="container bg-warning w-100 mb-3 p-3">
+          <section id="temp" class="d-inline-block" style="text-align: left;">
+            <h3 id="feels-like">Feels Like:</h3>
+            <h3 id="current-temp">Temperature:</h3>
+          </section>
+          <section
+            id="other"
+            class="d-inline-block"
+            style="text-align: left; margin-left: 150px"
+          >
+            <h4 id="current-humidity">Humidity:</h4>
+            <h4 id="current-wind">wind speed:</h4>
+            <h4 id="uvi">UV Index:</h4>
+          </section>
+        </div>
+      </main>
+
+      <div
+        class="w-75 five-day container-sm container-md container-lg float-right text-center m-3 p-3"
+      >
+        <h2 class="text-left">Five-Day Forecast:</h2>
+        <div id="day-1"></div>
+        <div id="day-2"></div>
+        <div id="day-3"></div>
+        <div id="day-4"></div>
+        <div id="day-5"></div>
+      </div>
     </div>
 
-    <div class="w-100 clearfix" style="height: 17%"></div>
+    <div class="w-100 clearfix" style="height: 17%;"></div>
 
-    <footer class=" clearfix sticky-footer" style="display: contents; border-color: black; background-color: grey">
-        <div class="container-fluid">
-            <div class="row text-center">
-                <div class="col">
-                    <h3>
-                        Visit me on social media:
-                    </h3>
-                </div>
-            </div>
-            <!-- footer social media classes and styling from https://www.w3schools.com/howto/howto_css_social_media_buttons.asp -->
-            <div class="row">
-                <div class="col" id="social-media">
-                    <a href="https://www.linkedin.com/in/ericdtorres/" class="fa fa-linkedin" target="_blank"
-                        rel="noopener noreferrer"></a>
-                    <a href="https://github.com/etorres-revature" class="fa fa-github" target="_blank"
-                        rel="noopener noreferrer"></a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <p id="e_mail">E-mail: <a href="mailto:etorresnotary@gmail.com">etorresnotary@gmail.com</a></p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <p id="copyright">
-                        &copy; 2020 Eric D. Torres Productions
-                    </p>
-                </div>
-            </div>
+    <footer
+      class="clearfix sticky-footer"
+      style="display: contents; border-color: black; background-color: grey;"
+    >
+      <div class="container-fluid">
+        <div class="row text-center">
+          <div class="col">
+            <h3>
+              Visit me on social media:
+            </h3>
+          </div>
         </div>
+        <!-- footer social media classes and styling from https://www.w3schools.com/howto/howto_css_social_media_buttons.asp -->
+        <div class="row">
+          <div class="col" id="social-media">
+            <a
+              href="https://www.linkedin.com/in/ericdtorres/"
+              class="fa fa-linkedin"
+              target="_blank"
+              rel="noopener noreferrer"
+            ></a>
+            <a
+              href="https://github.com/etorres-revature"
+              class="fa fa-github"
+              target="_blank"
+              rel="noopener noreferrer"
+            ></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p id="e_mail">
+              E-mail:
+              <a href="mailto:etorresnotary@gmail.com"
+                >etorresnotary@gmail.com</a
+              >
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p id="copyright">
+              &copy; 2020 Eric D. Torres Productions
+            </p>
+          </div>
+        </div>
+      </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.js"
-        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-        crossorigin="anonymous"></script>
-    <script src="./app.js"></script>
-</body>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./app.js"></script>
+  </body>
 </html>
