@@ -8,7 +8,7 @@
 $(document).ready(function () {
     const baseWeatherURL = `https://api.openweathermap.org/data/2.5/onecall?appid=340e329562e29bd2ff2b681d0bf2d492&exclude=hourly,minutely`;
     const baseGeoCodeURL = `https://api.opencagedata.com/geocode/v1/json?key=ef6e5295fc1b4624b73a959b2fee725e&language=en&pretty=1`;
-    const todayDate = moment().format("MMM Do YYYY")
+    const todayDate = moment().format("llll")
     let currentCity = '';
     let currentDate = '';
     let currentTemp = '';
@@ -98,28 +98,33 @@ $(document).ready(function () {
                         //five day forecast
 
                         // console.log(weatherData.daily[0])
-                        for (var i = 0; i < 5; i++) {
+                        for (var i = 1; i < 6; i++) {
                             let fiveDayIcon = weatherData.daily[i].weather[0].icon;
                             // console.log(fiveDayIcon);
                             let fiveDayWeatherIcon = "http://openweathermap.org/img/wn/" + fiveDayIcon + ".png"
                             let fiveDayTemp = weatherData.daily[i].temp.day;
                             let fiveDayFeelsLike = weatherData.daily[i].feels_like.day;
                             let fiveDayHumidity = weatherData.daily[i].humidity;
-
+                            let fiveDayDate = weatherData.daily[i].sunrise; 
+                            console.log(fiveDayDate);
+                            let fiveDayDateMS = fiveDayDate * 1000;
+                            let dateObj = new Date(fiveDayDateMS);
+                            let humanDateFormat = dateObj.toLocaleDateString();
+                            
                             let fiveDayTempCelsius = (fiveDayTemp - 273.15);
                             let fiveDayTempFahrenheit = (((fiveDayTemp - 273.15) * 1.8) + 32);
 
                             let fiveDayFeelsLikeTempCelsius = (fiveDayFeelsLike - 273.15);
                             let fiveDayFeelsLikeTempFahrenheit = (((fiveDayFeelsLike - 273.15) * 1.8) + 32);
 
-                            let fiveDayDiv = $("#day-" + (i + 1));
-                            fiveDayDiv.append("<p>", todayDate)
+
+                            let fiveDayDiv = $("#day-" + (i));
+                            fiveDayDiv.append("<p>", humanDateFormat);
                             let displayIcon = fiveDayDiv.append(`<img SameSite="none">`);
                             displayIcon.children().attr("src", fiveDayWeatherIcon);
                             fiveDayDiv.append("<p>", "Temp: " + fiveDayTempFahrenheit.toFixed(2) + "*F/" + fiveDayTempCelsius.toFixed(2) + "*C");
                             fiveDayDiv.append("<p>", "Feels Like: " + fiveDayFeelsLikeTempFahrenheit.toFixed(2) + "*F/" + fiveDayFeelsLikeTempCelsius.toFixed(2) + "*C")
                             fiveDayDiv.append("<p>", "Humidity: " + fiveDayHumidity + "%");
-
                         }
                     });
             });

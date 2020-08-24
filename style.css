@@ -13,7 +13,6 @@ header {
     color: seashell;
 }
 
-
 aside, main, div.five-day {
     background-color: oldlace;
 }
@@ -45,7 +44,7 @@ div#day-1, div#day-2, div#day-3, div#day-4, div#day-5 {
     width: 175px;
     background-color: blue;
     color: whitesmoke;
-    margin-right: 12px;
+    margin: 15px;
     border-radius: 25px;
     display: inline-block;
     font-family: Arial, Helvetica, sans-serif
