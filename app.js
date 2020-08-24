@@ -83,8 +83,8 @@ function getLatLong(requestedLocation) {
                     let wind = $("#current-wind");
                     let uvi = $("#uvi");
 
-                    feelsLike.append("<p style='display: inline; padding-left: 12px'>", "FEELS-LIKE: "+feelsLikeTempFahrenheit.toFixed(2) + "*F / " + feelsLikeTempCelsius.toFixed(2) + "*C ").show;
-                    temp.append("<p style='display: inline; padding-left: 12px'>", "TEMPERATURE: "+ tempFahrenheit.toFixed(2) + "*F / " + tempCelsius.toFixed(2) + "*C ").show
+                    feelsLike.append("<p style='display: inline;'>", "FEELS-LIKE: "+feelsLikeTempFahrenheit.toFixed(2) + "*F / " + feelsLikeTempCelsius.toFixed(2) + "*C ").show;
+                    temp.append("<p style='display: inline;'>", "TEMPERATURE: "+ tempFahrenheit.toFixed(2) + "*F / " + tempCelsius.toFixed(2) + "*C ").show
                     humidity.append("<p style='display: inline; padding-left: 12px'>", "Humidity: "+currentHumidity + "%");
                     wind.append("<p style='display: inline; padding-left: 12px'>", "Wind speed: "+currentWindSpeed + " meter/second")
                     uvi.append("<p style='display: inline; padding-left: 12px'>", "UV Index: "+currentUVI);
