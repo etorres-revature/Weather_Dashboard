@@ -1,13 +1,28 @@
 body {
     height: 100vh;
+    background-image: url(./assets/images/background/dark-storm-clouds.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 header {
     height: 9%;
+    background-color: darkgrey;
+    font-weight: 750;
+}
+
+aside, main, div.five-day {
+    background-color: oldlace;
 }
 
 aside {
     width: 28.5%;
+}
+
+img.search-image {
+    max-height: 100%;
+    max-width: 100%;
 }
 
 .weather-display, .five-day {
@@ -18,6 +33,11 @@ aside {
     display: table-cell;
 }
 
+.list-group-item {
+    font-family: 'Abril Fatface', cursive;
+    text-decoration: italic;
+}
+
 div#day-1, div#day-2, div#day-3, div#day-4, div#day-5 {
     height: 250px;
     width: 175px;
@@ -26,6 +46,7 @@ div#day-1, div#day-2, div#day-3, div#day-4, div#day-5 {
     margin-right: 12px;
     border-radius: 25px;
     display: inline-block;
+    font-family: Arial, Helvetica, sans-serif
 }
 
 #current-city {
