@@ -101,6 +101,11 @@ div#day-1, div#day-2, div#day-3, div#day-4, div#day-5 {
 
 #copyright {
     text-align: center;
+    color: wheat;
+}
+
+#social-media-header {
+    color: wheat;
 }
 
 #social-media {
@@ -112,6 +117,7 @@ h2.current-city {
 }
 
 #e_mail {
+    color: wheat;
     text-align: center
 }
 
