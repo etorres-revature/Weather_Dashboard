@@ -142,6 +142,7 @@ $(document).ready(function () {
         $("#current-humidity").empty();
         $("#current-wind").empty();
         $("#uvi").empty();
+        $("#current-date").empty();
         for (let i = 1; i < 6; i++) {
             $("#day-" + i).empty();
         }
@@ -168,6 +169,7 @@ $(document).ready(function () {
         // console.log(location);
         getLatLong(location);
         localStorage.setItem("lastLocation", location);
+        $("#inputSearch").val("")
     });
 
     $(".list-group-item").on("click", function () {
