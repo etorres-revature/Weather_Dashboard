@@ -213,9 +213,13 @@ $(document).ready(function () {
     event.preventDefault();
     let location = $("#inputSearch").val().trim();
     // console.log(location);
+    if (location === "") {
+        alert("Please enter a city and state/country to continue.")
+    } else {
     getLatLong(location);
     localStorage.setItem("lastLocation", location);
     $("#inputSearch").val("");
+    }
   });
 
   $(".list-group-item").on("click", function () {
