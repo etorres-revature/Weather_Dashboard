@@ -21,7 +21,6 @@ $(document).ready(function () {
     let long = 0;
 
     renderLast();
-    uvIndexBackground();
 
     function getLatLong(requestedLocation) {
         getEmpty();
@@ -95,6 +94,8 @@ $(document).ready(function () {
                         icon.css("display", "inline-block");
                         date.append(todayDate);
 
+                        uvIndexBackground(currentUVI)
+
                         //five day forecast
 
                         // console.log(weatherData.daily[0])
@@ -106,7 +107,7 @@ $(document).ready(function () {
                             let fiveDayFeelsLike = weatherData.daily[i].feels_like.day;
                             let fiveDayHumidity = weatherData.daily[i].humidity;
                             let fiveDayDate = weatherData.daily[i].sunrise; 
-                            console.log(fiveDayDate);
+                            // console.log(fiveDayDate);
                             let fiveDayDateMS = fiveDayDate * 1000;
                             let dateObj = new Date(fiveDayDateMS);
                             let humanDateFormat = dateObj.toLocaleDateString();
@@ -146,18 +147,18 @@ $(document).ready(function () {
         }
     }
 
-    function uvIndexBackground() {
+    function uvIndexBackground(uviNum) {
         let uvi = $("#uvi")
-        console.log("uvi", uvi)
-        let uvIndP = $("#uvIndexPara")
-        if (uvi.attr("value") < 6) {
-            uvi.addClass("uvLow");
-        } else if (uvi.attr("value") >= 6 && uvi.attr("value") <= 7) {
-            uvi.addClass("uvHigh")
-        } else if (uvi.attr("value") > 7 && uvi.attr("value") < 11) {
-            uvi.addClass("uvVeryHigh")
-        } else if (uvi.attr("value") >= 11) {
-            uvi.addClass("uvExtremelyHigh")
+        // console.log("uvi", uviNum)
+        let uvIndP = $("#uvIndexPara");
+        if (uviNum < 6) {
+            uvi.css("background", "greenyellow");
+        } else if (uviNum >= 6 && uviNum <= 7) {
+            uvi.css("background", "yello");
+        } else if (uviNum > 7 && uviNum < 11) {
+            uvi.css("background", "darkorange");
+        } else if (uviNum >= 11) {
+            uvi.css("background", "red");
         }
     }
 
@@ -167,7 +168,6 @@ $(document).ready(function () {
         // console.log(location);
         getLatLong(location);
         localStorage.setItem("lastLocation", location);
-        uvIndexBackground();
     });
 
     $(".list-group-item").on("click", function () {
@@ -176,6 +176,6 @@ $(document).ready(function () {
         //console.log(location);
         getLatLong(location);
         localStorage.setItem("lastLocation", location);
-        uvIndexBackground();
+        console.log("just before uvI background function")
     });
 });
