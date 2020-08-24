@@ -4,6 +4,8 @@
 //opencage api call to reverse geocode
 //https://api.opencagedata.com/geocode/v1/json?q=chicago%2C%20IL&key=ef6e5295fc1b4624b73a959b2fee725e&language=en&pretty=1
 
+
+$(document).ready(function() {
 const baseWeatherURL = `https://api.openweathermap.org/data/2.5/onecall?appid=340e329562e29bd2ff2b681d0bf2d492&exclude=hourly,minutely`;
 const baseGeoCodeURL = `https://api.opencagedata.com/geocode/v1/json?key=ef6e5295fc1b4624b73a959b2fee725e&language=en&pretty=1`;
 let currentCity = '';
@@ -16,6 +18,8 @@ let currentFeelsLike = "";
 let currentWeatherIcon = "";
 let lat = 0;
 let long = 0;
+
+renderLast();
 
 function getLatLong(requestedLocation) {
     getEmpty();
@@ -126,6 +130,11 @@ function getLatLong(requestedLocation) {
         });
 }
 
+function renderLast(){
+    var location = localStorage.getItem("lastLocation", location);
+    getLatLong(location);
+}
+
 function getEmpty(){
 
     $("#feels-like").empty();
@@ -156,4 +165,4 @@ $(".list-group-item").on("click", function(){
     getLatLong(location);
     localStorage.setItem("lastLocation", location);
 });
-
+});
