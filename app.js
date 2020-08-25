@@ -291,10 +291,8 @@ $(document).ready(function () {
   $(".list-group-item").on("click", function () {
     event.preventDefault();
     let location = $(this).data("location");
-    //console.log(location);
     getLatLong(location);
     localStorage.setItem("lastLocation", location);
-    console.log("just before uvI background function");
   });
 
   $("#clear-search").on("click", function () {
