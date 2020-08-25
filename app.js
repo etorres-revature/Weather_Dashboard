@@ -250,6 +250,8 @@ $(document).ready(function () {
     $("#current-wind").empty();
     $("#uvi").empty();
     $("#current-date").empty();
+    $("#current-weather-icon").attr("src", "");
+    $("#current-city").empty();
     for (let i = 1; i < 6; i++) {
       $("#day-" + i).empty();
     }
@@ -299,4 +301,10 @@ $(document).ready(function () {
     event.preventDefault();
     clearSearch();
   });
+
+  $("#clear-weather").on("click", function () {
+    event.preventDefault();
+    getEmpty();
+  })
+
 });
