@@ -137,10 +137,10 @@
 
     <div class="w-100 clearfix mt-5">
       <aside
-        class="w-25 container-sm container-md container-lg float-left border border-dark p-3 m-5"
+        class="w-25 container-sm container-md container-lg float-left clearfix border border-dark p-3 m-5"
       >
         <h4 class="">Search for a City:</h4>
-        <div class="input-group mb-3">
+        <div class="input-group">
           <input
             id="inputSearch"
             type="text"
@@ -217,6 +217,8 @@
         <div id="search-div" class="card" style="display: none;">
           <ul class="search-ul list-group list-group-flush"></ul>
         </div>
+        <button id="clear-search" type="button" class="mt-3 float-left btn btn-info">Clear Search</button>
+        <button id="clear-weather"type="button" class="mt-3 float-right btn btn-info">Clear Weather</button>
       </aside>
 
       <main

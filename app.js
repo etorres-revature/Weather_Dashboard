@@ -193,6 +193,13 @@ $(document).ready(function () {
     );
   }
 
+  function clearSearch() {
+    $("#search-title").css("display", "none");
+    $("#search-div").css("display", "none");
+    $("#search-ul").empty();
+    localStorage.clear();
+  }
+
   function addSearchToLocalStorage(location) {
     console.log("I'm in addSearch localStorage function");
     console.log(location);
@@ -286,5 +293,10 @@ $(document).ready(function () {
     getLatLong(location);
     localStorage.setItem("lastLocation", location);
     console.log("just before uvI background function");
+  });
+
+  $("#clear-search").on("click", function () {
+    event.preventDefault();
+    clearSearch();
   });
 });
