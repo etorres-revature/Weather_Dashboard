@@ -9,6 +9,7 @@ body {
 header {
     height: 7.5%;
     background-color: darkgrey;
+    color: seashell;
 }
 
 aside, main, div.five-day {
