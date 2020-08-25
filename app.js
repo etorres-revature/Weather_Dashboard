@@ -18,6 +18,7 @@ $(document).ready(function () {
   let currentWeatherIcon = "";
   let lat = 0;
   let long = 0;
+  let locationArray = [];
 
   renderLast();
 
@@ -179,14 +180,37 @@ $(document).ready(function () {
 
   function addSearch(location) {
     $("#search-title").css("display", "block");
-    $("#search-div").css("display", "block");      
-    $(".search-ul").append("<li id='" +
-    location +
-    "' class='list-group-item' data-location='" +
-    location +
-    "'>" +
-    location +
-    "</li>");
+    $("#search-div").css("display", "block");
+    $(".search-ul").append(
+      "<li id='" +
+        location +
+        "' class='list-group-item' data-location='" +
+        location +
+        "'>" +
+        location +
+        "</li>"
+    );
+  }
+
+  function addSearchToLocalStorage(location) {
+    console.log("I'm in addSearch localStorage function");
+    console.log(location);
+
+    let newSearchLocation = {
+      searchLocation: location,
+    };
+    console.log(newSearchLocation);
+
+    locationArray = [JSON.parse(localStorage.getItem("searchLocations"))];
+
+    if (locationArray === null) {
+      localStorage.setItem("searchLocations", JSON.stringify(newSearchLocation));
+    } else {
+      console.log(locationArray);
+      console.log(typeof locationArray);
+      locationArray.push(newSearchLocation);
+      localStorage.setItem("searchLocations", JSON.stringify(locationArray));
+    }
   }
 
   function renderLast() {
@@ -214,7 +238,7 @@ $(document).ready(function () {
   function uvIndexBackground(uviNum) {
     let uvi = $("#uvi");
     console.log("uvi", uviNum);
-    let uvIndP = $("#uvIndexPara");
+    // let uvIndP = $("#uvIndexPara");
     if (uviNum >= 0 && uviNum <= 3) {
       uvi.css("background", "greenyellow");
     } else if (uviNum > 3 && uviNum < 5) {
@@ -238,6 +262,7 @@ $(document).ready(function () {
       getLatLong(location);
       insertStorage(location);
       addSearch(location);
+      addSearchToLocalStorage(location);
     }
   });
 
