@@ -18,7 +18,6 @@ $(document).ready(function () {
   let currentWeatherIcon = "";
   let lat = 0;
   let long = 0;
-  let locationArray = [];
 
   renderLast();
   renderStoredSearch();
@@ -209,27 +208,28 @@ $(document).ready(function () {
     };
     console.log(newSearchLocation);
 
-    locationArray = [JSON.parse(localStorage.getItem("searchLocations"))];
-
-    if (locationArray === null) {
-      localStorage.setItem(
-        "searchLocations",
-        JSON.stringify(newSearchLocation)
-      );
+    let locationArray = [];
+    if (JSON.parse(localStorage.getItem("searchLocations")) === null) {
+      locationArray = [];
+      console.log("1st", locationArray);
     } else {
+      locationArray = JSON.parse(localStorage.getItem("searchLocations"));
       console.log(locationArray);
       console.log(typeof locationArray);
-      locationArray.push(newSearchLocation);
-      localStorage.setItem("searchLocations", JSON.stringify(locationArray));
     }
+    locationArray.push(newSearchLocation);
+    localStorage.setItem("searchLocations", JSON.stringify(locationArray));
   }
 
   function renderStoredSearch() {
     console.log("Im in render stored search locations func");
-    var searchArray = JSON.parse(localStorage.getItem("searchLocations")) || [];
-    console.log("searchArray", searchArray);
-    for (var i = 0; i < searchArray.length; i++) {
-      addSearch(searchArray[i].searchLocation);
+    var searchArray = JSON.parse(localStorage.getItem("searchLocations"));
+
+    if (searchArray != null) {
+      console.log("searchArray", searchArray);
+      for (var i = 0; i < searchArray.length; i++) {
+        addSearch(searchArray[i].searchLocation);
+      }
     }
   }
 
@@ -305,6 +305,5 @@ $(document).ready(function () {
   $("#clear-weather").on("click", function () {
     event.preventDefault();
     getEmpty();
-  })
-
+  });
 });
