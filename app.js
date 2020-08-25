@@ -21,6 +21,7 @@ $(document).ready(function () {
   let locationArray = [];
 
   renderLast();
+  renderStoredSearch();
 
   function getLatLong(requestedLocation) {
     getEmpty();
@@ -204,12 +205,24 @@ $(document).ready(function () {
     locationArray = [JSON.parse(localStorage.getItem("searchLocations"))];
 
     if (locationArray === null) {
-      localStorage.setItem("searchLocations", JSON.stringify(newSearchLocation));
+      localStorage.setItem(
+        "searchLocations",
+        JSON.stringify(newSearchLocation)
+      );
     } else {
       console.log(locationArray);
       console.log(typeof locationArray);
       locationArray.push(newSearchLocation);
       localStorage.setItem("searchLocations", JSON.stringify(locationArray));
+    }
+  }
+
+  function renderStoredSearch() {
+    console.log("Im in render stored search locations func");
+    var searchArray = JSON.parse(localStorage.getItem("searchLocations")) || [];
+    console.log("searchArray", searchArray);
+    for (var i = 0; i < searchArray.length; i++) {
+      addSearch(searchArray[i].searchLocation);
     }
   }
 
