@@ -25,7 +25,7 @@ $(document).ready(function () {
   function getLatLong(requestedLocation) {
     getEmpty();
     console.log("inside get lat long function");
-    searchGeoCodeURL = baseGeoCodeURL + "&q=" + requestedLocation;
+    var searchGeoCodeURL = baseGeoCodeURL + "&q=" + requestedLocation;
     // console.log(searchGeoCodeURL);
 
     //nested ajax calls - one to open cage to get lat and long
