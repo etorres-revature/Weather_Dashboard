@@ -20,6 +20,10 @@ aside {
     width: 28.5%;
 }
 
+.search-ul {
+    text-transform: capitalize;
+}
+
 img.search-image {
     max-height: 100%;
     max-width: 100%;

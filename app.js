@@ -177,9 +177,26 @@ $(document).ready(function () {
       });
   }
 
+  function addSearch(location) {
+    $("#search-title").css("display", "block");
+    $("#search-div").css("display", "block");      
+    $(".search-ul").append("<li id='" +
+    location +
+    "' class='list-group-item' data-location='" +
+    location +
+    "'>" +
+    location +
+    "</li>");
+  }
+
   function renderLast() {
     var location = localStorage.getItem("lastLocation", location);
     getLatLong(location);
+  }
+
+  function insertStorage(location) {
+    localStorage.setItem("lastLocation", location);
+    $("#inputSearch").val("");
   }
 
   function getEmpty() {
@@ -196,7 +213,7 @@ $(document).ready(function () {
 
   function uvIndexBackground(uviNum) {
     let uvi = $("#uvi");
-    console.log("uvi", uviNum)
+    console.log("uvi", uviNum);
     let uvIndP = $("#uvIndexPara");
     if (uviNum >= 0 && uviNum <= 3) {
       uvi.css("background", "greenyellow");
@@ -206,8 +223,8 @@ $(document).ready(function () {
       uvi.css("background", "darkorange");
     } else if (uviNum > 7 && uviNum <= 10) {
       uvi.css("background", "orangered");
-    }else if (uviNum > 10) {
-        uvi.css("background", "darkorchid")
+    } else if (uviNum > 10) {
+      uvi.css("background", "darkorchid");
     }
   }
 
@@ -216,11 +233,11 @@ $(document).ready(function () {
     let location = $("#inputSearch").val().trim();
     // console.log(location);
     if (location === "") {
-        alert("Please enter a city and state/country to continue.")
+      alert("Please enter a city and state/country to continue.");
     } else {
-    getLatLong(location);
-    localStorage.setItem("lastLocation", location);
-    $("#inputSearch").val("");
+      getLatLong(location);
+      insertStorage(location);
+      addSearch(location);
     }
   });
 
