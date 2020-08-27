@@ -14,15 +14,15 @@ While humans may not be able to control the weather, modern meterology has advan
 
 ## Application Programming Interface 
 
-An applicaiton programming interface (API) is a computeing interface that defines interactions between multiple software intermediaries.  It defines the kinds of calls or requests that can be made, how to make them, the data formats that should be used, the convetnions to follow, and the schema that the data follows.  It can also provide extension mechanisms so that users can extend existing funcitonality in various ways to varying degrees.<a href="#footnote1"><sup>[1]</sup></a>
+An applicaiton programming interface (API) is a computing interface that defines interactions between multiple software intermediaries.  It defines the kinds of calls or requests that can be made, how to make them, the data formats that should be used, the convetnions to follow, and the schema that the data follows.  It can also provide extension mechanisms so that users can extend existing functionality in various ways to varying degrees.<a href="#footnote1"><sup>[1]</sup></a>
 
-### OpenCage 
+### [OpenCage](https://opencagedata.com/)
 
-The team at [OpenCage](https://opencagedata.com/) has built a geocoding API that can do both forward and reverse geocoding.  Foward geocoding is the process of finding latitude and longitude coordinates from the name of a location.  Reverse geocoding is finding a location based on the known latitude and longitude cooredinates.  The [Weather Dashboard](https://etorres-revature.github.io/Weather_Dashboard/) app uses the OpenCage API to take in a city name as a search parameter and forward geocode the locaiton name into a set of latitude and longitude coordinates. 
+The team at [OpenCage](https://opencagedata.com/) has built a geocoding API that can do both forward and reverse geocoding.  Foward geocoding is the process of finding latitude and longitude coordinates from the name of a location.  Reverse geocoding is finding a location based on the known latitude and longitude cooredinates.  The [Weather Dashboard](https://etorres-revature.github.io/Weather_Dashboard/) app uses the [OpenCage](https://opencagedata.com/) API to take in a city name as a search parameter and forward geocode the locaiton name into a set of latitude and longitude coordinates. 
 
 ### OpenWeather
 
-Similarly, [OpenWeather](https://openweathermap.org/) has develped an API tha will give you weather information for a location.  This information can be minutely, hourly, or daily.  It may be the current weather or a five day forecast.  In order to use the "one call" OpenWeather API latitude and longitude coordinates are needed.  The [Weather Dashboard](https://etorres-revature.github.io/Weather_Dashboard/) takes the latitude and longitude coordinates from OpenCage and uses them in the OpenWeather API to get current and five-day weather conditions.
+Similarly, [OpenWeather](https://openweathermap.org/) has develped an API tha will give you weather information for a location.  This information can be minutely, hourly, or daily.  It may be the current weather or a five day forecast.  In order to use the "one call" OpenWeather API latitude and longitude coordinates are needed.  The [Weather Dashboard](https://etorres-revature.github.io/Weather_Dashboard/) takes the latitude and longitude coordinates from [OpenCage](https://opencagedata.com/) and uses them in the [OpenWeather](https://openweathermap.org/) API to get current and five-day weather conditions.
 
 > Climate is what we expect, 
 > weather is what we get.
@@ -32,29 +32,29 @@ Similarly, [OpenWeather](https://openweathermap.org/) has develped an API tha wi
 
 The [Weather Dashboard](https://etorres-revature.github.io/Weather_Dashboard/) has a static list of "Popular Cities" for which users may want to know the weather conditions. 
 
-![Weather Dashboard Popular Cities](./assets/images/screenshots/weather=dashboard-popular-cities.png)
+![Weather Dashboard Popular Cities](./assets/images/screenshots/weather-dashboard-popular-cities.png)
 
 Additionally, users of the [Weather Dashboard](https://etorres-revature.github.io/Weather_Dashboard/) can search for a city for which he/she wants to know the weatehr conditions.  When the user enters the name of the city, the app takes the entered city name and gets the latitude and longitude coordinate3s from OpenCage.  Once OpenCage has returned the latitutde and longitude coordinates, they are used to get the weather conditions from OpenWeather.  The information from OpenWeather is then displayed in the appropriate spaces in the dashboard.  
 
 [Weather Dashboard](https://etorres-revature.github.io/Weather_Dashboard/) keeps track of cities that have been searched.  The searched cities are added to the "Previous Searches" list under the "Popular Cities".  Accordingly, each of the cities in the "Previous Searches" list is added to an object in local storage, so that the list is persistent. 
 
-![Weather Dashboard Search List](./assets/images/screenshots/weather-dashboard-search-list)
+![Weather Dashboard Search List](./assets/images/screenshots/weather-dashboard-search-list.png)
 
 > Weather forecast for tonight: dark.
 >          - George Carlin
 
 
-When a city is searched, the UV Index information is displayed.  The background of the UV Index is updated according to this 
+When a city is searched, the UV Index information is displayed.  The background of the UV Index is updated according to this range.<a href="#footnote2"><sup>[2]</sup></a>
 
-* Low UV from 0 to 2 is represnted by greenyellow [#adff2f](https://placehold.it/18/adff2f?text=+)
+* **Low UV** from 0 to 2 is represnted by greenyellow ![#adff2f](https://placehold.it/18/adff2f?text=+)
 
-* Moderate UV from 3 to 5 is represented by yellow [#ffff00](https://placehold.it/18/ffff00?text=+)
+* **Moderate UV** from 3 to 5 is represented by yellow ![#ffff00](https://placehold.it/18/ffff00?text=+)
 
-* High UV from 6 to 7 is represented by dark orange [#ff8c00](https://placehold.it/18/ff8c00?text=+)
+* **High UV** from 6 to 7 is represented by dark orange ![#ff8c00](https://placehold.it/18/ff8c00?text=+)
 
-* Very high UV from 8 to 10 is represented by orange red [#ff5349](https://placehold.it/18/ff5349?text=+)
+* **Very High UV** from 8 to 10 is represented by orange red ![#ff5349](https://placehold.it/18/ff5349?text=+)
 
-* Extreme UV over 11 is represented by dark orchid [#9932cc](https://placehold.it/18/9932cc?text=+)
+* **Extreme UV** over 11 is represented by dark orchid [#9932cc](https://placehold.it/18/9932cc?text=+)
 
 The [Weather Dashboard](https://etorres-revature.github.io/Weather_Dashboard/) also includes functionality to clear the "Previous Seaarch" ...
 
@@ -118,3 +118,4 @@ This product is unlicensed.
 
 <a name="footnote1">[API Wikipedia page](https://en.wikipedia.org/wiki/API)</a>
 
+<a name="footnote2">[UV Index Wikipedia page](https://en.wikipedia.org/wiki/Ultraviolet_index)</a>
