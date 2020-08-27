@@ -409,12 +409,18 @@ $(document).ready(function () {
 
   //sets up a click event on the location cards
   $(".list-group-item").on("click", function () {
-    event.preventDefault();
     //makes the location to search the one that was in the li
     let location = $(this).data("location");
     //runs the get lat/long and dsiplay weather function
     getLatLong(location);
     //adds this locaiton into local storage as last searched
+    insertStorage(location);
+  });
+
+  $(document).on("click", ".list-group-item", function () {
+    let location = $(this).data("location");
+    console.log("the click for previous search", location)
+    getLatLong(location);
     insertStorage(location);
   });
 

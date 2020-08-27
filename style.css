@@ -16,8 +16,12 @@ aside, main, div.five-day {
     background-color: oldlace;
 }
 
-aside {
-    width: 28.5%;
+.weather-search {
+    width: 27.5%;
+}
+
+.five-day, .weather-display {
+    width: 66%
 }
 
 .search-ul {
@@ -27,10 +31,6 @@ aside {
 img.search-image {
     max-height: 100%;
     max-width: 100%;
-}
-
-.weather-display, .five-day {
-    width: 68.5%;
 }
 
 .table-wrapper .column {
