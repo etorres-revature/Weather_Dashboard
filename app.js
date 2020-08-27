@@ -370,11 +370,11 @@ $(document).ready(function () {
     let uvi = $("#uvi");
     console.log("uvi", uviNum);
     // let uvIndP = $("#uvIndexPara");
-    if (uviNum >= 0 && uviNum <= 3) {
+    if (uviNum >= 0 && uviNum < 3) {
       uvi.css("background", "greenyellow");
-    } else if (uviNum > 3 && uviNum < 5) {
+    } else if (uviNum >= 3 && uviNum <= 5) {
       uvi.css("background", "yellow");
-    } else if (uviNum >= 5 && uviNum <= 7) {
+    } else if (uviNum > 5 && uviNum <= 7) {
       uvi.css("background", "darkorange");
     } else if (uviNum > 7 && uviNum <= 10) {
       uvi.css("background", "orangered");
