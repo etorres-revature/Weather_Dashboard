@@ -102,7 +102,7 @@ $(document).ready(function () {
             currentWeatherIcon = weatherData.current.weather[0].icon;
             //iserting the code for the current weather icon into the open weather URL to retrieve icons
             currentWeatherIconURL =
-              "http://openweathermap.org/img/wn/" + currentWeatherIcon + ".png";
+              "http://openweathermap.org/img/w/" + currentWeatherIcon + ".png";
             console.log("this is current icon", currentWeatherIcon);
 
             //current temp conversion to celsius
@@ -200,7 +200,7 @@ $(document).ready(function () {
               // console.log(fiveDayIcon);
               //doing the open weather URL to get the appropriate icon
               let fiveDayWeatherIcon =
-                "http://openweathermap.org/img/wn/" + fiveDayIcon + ".png";
+                "http://openweathermap.org/img/w/" + fiveDayIcon + ".png";
               //pulling the five day temp
               let fiveDayTemp = weatherData.daily[i].temp.day;
               //pulling the five day "feels like"
