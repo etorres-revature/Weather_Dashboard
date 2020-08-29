@@ -407,20 +407,27 @@ $(document).ready(function () {
     }
   });
 
-  //sets up a click event on the location cards
-  $(".list-group-item").on("click", function () {
-    //makes the location to search the one that was in the li
-    let location = $(this).data("location");
-    //runs the get lat/long and dsiplay weather function
-    getLatLong(location);
-    //adds this locaiton into local storage as last searched
-    insertStorage(location);
-  });
+  //this funciton is now redundant thanks to the document one below
+  // //sets up a click event on the location cards
+  // $(".list-group-item").on("click", function () {
+  //   //makes the location to search the one that was in the li
+  //   let location = $(this).data("location");
+  //   //runs the get lat/long and dsiplay weather function
+  //   getLatLong(location);
+  //   //running getEmpty here to try and fix bug where dynamic information stacks when the cards are selected
 
+  //   //adds this locaiton into local storage as last searched
+  //   insertStorage(location);
+  // });
+
+  //sets up click event on the location cards from the document to capture those added dynamically for previous searches elininating the need for the above function
   $(document).on("click", ".list-group-item", function () {
+    //makes the locaiton to search entered in by the user the value to search and to add in the li
     let location = $(this).data("location");
-    console.log("the click for previous search", location)
+    // console.log("the click for previous search", location)
+    //runs the get lat/long and display weather function
     getLatLong(location);
+    //add this location into local storage as last searched
     insertStorage(location);
   });
 
