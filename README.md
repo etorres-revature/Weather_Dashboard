@@ -104,7 +104,7 @@ Content and design created by :green_heart: Eric D. Torres :green_heart:.
 
 The author can be reached at etorresnotary@gmail.com. 
 
-###### License
+#### License
 
 MIT License
 
