@@ -80,6 +80,11 @@ div#day-1, div#day-2, div#day-3, div#day-4, div#day-5 {
     background-color: red;
 } */
 
+div#mapid {
+    height: 450px;
+    width: 85%;
+}
+
 .fa {
     padding: 20px;
     font-size: 30px;

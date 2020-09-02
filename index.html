@@ -1,367 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather Dashboard</title>
-    <!-- favicon for partly cloudy png image -->
-    <link
-      rel="icon"
-      type="image/png"
-      href="./assets/images/favicon/Weather-Partly-Cloudy-Rain-icon.png"
-    />
-    <!-- google fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap"
-      rel="stylesheet"
-    />
-    <!-- bootstrap -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-      crossorigin="anonymous"
-    />
-    <!-- font awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <!-- local styling -->
-    <link rel="stylesheet" href="./style.css" />
-  </head>
 
-  <body>
-    <!-- navbar borrowed form other projects -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a
-        class="navbar-brand"
-        href="https://stardewvalley.net"
-        target="_blank"
-        rel="noopener noreferrer"
-        >Eric D. Torres</a
-      >
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Dashboard</title>
+  <!-- favicon for partly cloudy png image -->
+  <link rel="icon" type="image/png" href="./assets/images/favicon/Weather-Partly-Cloudy-Rain-icon.png" />
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet" />
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <!-- leaflet js stylesheet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin="" />
+  <!-- local styling -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <div class="ml-auto">
-          <ul class="navbar-nav w-100">
-            <li class="nav-item active ml-auto">
-              <a
-                class="nav-link"
-                href="https://etorres-revature.github.io/Work_Day_Scheduler/"
-                >Day Planner<span class="sr-only">Day Planner</span></a
-              >
-            </li>
-            <li class="nav-item active ml-auto">
-              <a
-                class="nav-link"
-                href="https://etorres-revature.github.io/To_Do-Local_Storage/"
-                >Task List<span class="sr-only">Task List</span></a
-              >
-            </li>
-            <li class="nav-item active ml-auto">
-              <a
-                class="nav-link"
-                href="https://etorres-revature.github.io/New_York_Times_API_Search/"
-                >Search NY Times<span class="sr-only">Search NY Times</span></a
-              >
-            </li>
-            <li class="nav-item active ml-auto">
-              <a
-                class="nav-link"
-                href="https://etorres-revature.github.io/Password_Generator/"
-                >Password Generator
-                <span class="sr-only">Password Generator</span></a
-              >
-            </li>
-            <li class="nav-item active ml-auto">
-              <a
-                class="nav-link"
-                href="https://etorres-revature.github.io/JavaScript_Code_Quiz_Challenge/"
-                >JS Code Quiz<span class="sr-only">JS Code Quiz</span></a
-              >
-            </li>
-            <li class="nav-item dropdown ml-auto">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Responsive Portfolio:
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a
-                  class="dropdown-item"
-                  href="https://etorres-revature.github.io/Responsive_Portfolio/"
-                  >Home Page</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://etorres-revature.github.io/Responsive_Portfolio/about_me.html"
-                  >About Me</a
-                >
-                <a
-                  class="dropdown-item"
-                  href="https://etorres-revature.github.io/Responsive_Portfolio/portfolio.html"
-                  >Portfolio</a
-                >
-                <div class="dropdown-divider"></div>
-                <a
-                  class="dropdown-item"
-                  href="https://etorres-revature.github.io/Responsive_Portfolio/contact.html"
-                  >Contact</a
-                >
-              </div>
-            </li>
-          </ul>
-        </div>
-        <!-- <form class="form-inline my-2 my-lg-0"> -->
-        <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
-        <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
-        <!-- </form> -->
+<body>
+  <!-- navbar borrowed form other projects -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="https://stardewvalley.net" target="_blank" rel="noopener noreferrer">Eric D.
+      Torres</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="ml-auto">
+        <ul class="navbar-nav w-100">
+          <li class="nav-item active ml-auto">
+            <a class="nav-link" href="https://etorres-revature.github.io/Work_Day_Scheduler/">Day Planner<span
+                class="sr-only">Day Planner</span></a>
+          </li>
+          <li class="nav-item active ml-auto">
+            <a class="nav-link" href="https://etorres-revature.github.io/To_Do-Local_Storage/">Task List<span
+                class="sr-only">Task List</span></a>
+          </li>
+          <li class="nav-item active ml-auto">
+            <a class="nav-link" href="https://etorres-revature.github.io/New_York_Times_API_Search/">Search NY
+              Times<span class="sr-only">Search NY Times</span></a>
+          </li>
+          <li class="nav-item active ml-auto">
+            <a class="nav-link" href="https://etorres-revature.github.io/Password_Generator/">Password Generator
+              <span class="sr-only">Password Generator</span></a>
+          </li>
+          <li class="nav-item active ml-auto">
+            <a class="nav-link" href="https://etorres-revature.github.io/JavaScript_Code_Quiz_Challenge/">JS Code
+              Quiz<span class="sr-only">JS Code Quiz</span></a>
+          </li>
+          <li class="nav-item dropdown ml-auto">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Responsive Portfolio:
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="https://etorres-revature.github.io/Responsive_Portfolio/">Home Page</a>
+              <a class="dropdown-item"
+                href="https://etorres-revature.github.io/Responsive_Portfolio/about_me.html">About Me</a>
+              <a class="dropdown-item"
+                href="https://etorres-revature.github.io/Responsive_Portfolio/portfolio.html">Portfolio</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item"
+                href="https://etorres-revature.github.io/Responsive_Portfolio/contact.html">Contact</a>
+            </div>
+          </li>
+        </ul>
       </div>
-    </nav>
-    <!-- header -->
-    <header class="text-center">
-      <h1 class="display-4 font-weight-bold">Weather Dashboard</h1>
-    </header>
-    <!-- aside to hold searched items -->
-      <aside
-        class="weather-search container-sm container-md container-lg float-left clearfix border border-dark p-3 mt-3 ml-4">
-        <h4 class="">Search for a City:</h4>
-        <div class="input-group">
-          <!-- text input for searching city -->
-          <input
-            id="inputSearch"
-            type="text"
-            style="height: 50px"
-            class="form-control"
-            placeholder="Enter a city here"
-            aria-label="search-city"
-            aria-describedby="basic-addon2"
-          />
-          <!-- serach button-->
-          <div class="input-group-append">
-            <button id="searchBtn" class="btn btn-info" type="button">
-              <img
-                src="./assets/images/favicon/icons8-search-64.png"
-                alt="search magnifying glass"
-                id="search-image"
-              />
-            </button>
-          </div>
-        </div>
-        <br />
-        <!-- popular city for searches -->
-        <h4>Popular Cities:</h4>
-        <div class="card mb-3">
-          <ul class="list-group list-group-flush">
-            <!-- list of cities that are also searchable -->
-            <li id="ausTX" class="list-group-item" data-location="Austin, TX">
-              Austin
-            </li>
-            <li id="nyNY" class="list-group-item" data-location="New York, NY">
-              New York
-            </li>
-            <li id="miamiFL" class="list-group-item" data-location="Miami, FL">
-              Miami
-            </li>
-            <li
-              id="noLA"
-              class="list-group-item"
-              data-location="New Orleans, LA"
-            >
-              New Orleans
-            </li>
-            <li
-              id="seattleWA"
-              class="list-group-item"
-              data-location="Seattle, WA"
-            >
-              Seattle
-            </li>
-            <li
-              id="laCA"
-              class="list-group-item"
-              data-location="Los Angeles, CA"
-            >
-              Los Angeles
-            </li>
-            <li id="chiIL" class="list-group-item" data-location="Chicago, IL">
-              Chicago
-            </li>
-            <li
-              id="denverCO"
-              class="list-group-item"
-              data-location="Denver, CO"
-            >
-              Denver
-            </li>
-            <li
-              id="stLouisMO"
-              class="list-group-item"
-              data-location="St. Louis, MO"
-            >
-              St. Louis
-            </li>
-          </ul>
-        </div>
-        <!-- hidden elements to hold previous searches -->
-        <h4 id="search-title" style="display: none">Previous Searches:</h4>
-        <div id="search-div" class="card" style="display: none">
-          <ul class="search-ul list-group list-group-flush"></ul>
-        </div>
-        <!-- button to clear previous searches -->
-        <button
-          id="clear-search"
-          type="button"
-          class="mt-3 float-left btn btn-info"
-        >
-          Clear Search
+      <!-- <form class="form-inline my-2 my-lg-0"> -->
+      <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
+      <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+      <!-- </form> -->
+    </div>
+  </nav>
+  <!-- header -->
+  <header class="text-center">
+    <h1 class="display-4 font-weight-bold">Weather Dashboard</h1>
+  </header>
+  <!-- aside to hold searched items -->
+  <aside
+    class="weather-search container-sm container-md container-lg float-left clearfix border border-dark p-3 mt-3 ml-4">
+    <h4 class="">Search for a City:</h4>
+    <div class="input-group">
+      <!-- text input for searching city -->
+      <input id="inputSearch" type="text" style="height: 50px" class="form-control" placeholder="Enter a city here"
+        aria-label="search-city" aria-describedby="basic-addon2" />
+      <!-- serach button-->
+      <div class="input-group-append">
+        <button id="searchBtn" class="btn btn-info" type="button">
+          <img src="./assets/images/favicon/icons8-search-64.png" alt="search magnifying glass" id="search-image" />
         </button>
-        <!-- button to clear weather divs(current and five day) -->
-        <button
-          id="clear-weather"
-          type="button"
-          class="mt-3 float-right btn btn-info"
-        >
-          Clear Weather
-        </button>
-      </aside>
-
-      <div class="clearfix">
-      <main
-        class="container-sm container-md container-lg weather-display float-right border border-dark mt-3 mr-3 mb-3"
-      >
-        <!-- div to display current conditions -->
-        <h2 id="current-cond">Current Conditions:</h2>
-        <img
-          id="current-weather-icon"
-          SameSite="none"
-          src="#"
-          style="display: none"
-          alt="current weather icon"
-        />
-        <!-- displays current date -->
-        <h3 id="current-date" class="text-center"></h3>
-        <!-- displays current City and weather icon -->
-        <h2 id="current-city" class="p-2">City Date:</h2>
-        <br />
-        <div class="container bg-warning w-100 mb-3 p-3">
-          <section id="temp" class="d-inline-block" style="text-align: left">
-            <!-- displays current "feels like" -->
-            <h3 id="feels-like">Feels Like:</h3>
-            <!-- displays current tmeperature -->
-            <h3 id="current-temp">Temperature:</h3>
-          </section>
-          <section
-            id="other"
-            class="d-inline-block"
-            style="text-align: left; margin-left: 150px"
-          >
-            <!-- displays current humidity -->
-            <h4 id="current-humidity">Humidity:</h4>
-            <!-- displays current wind speed -->
-            <h4 id="current-wind">wind speed:</h4>
-            <!-- displays current UV Index -->
-            <h4 id="uvi">UV Index:</h4>
-          </section>
-      </main>
-
-      <div
-        class="five-day container-sm container-md container-lg float-right text-center mr-3 mt-3 p-3"
-      >
-        <!-- these divs are dynamically sourced with five day weather forecast information from javascript -->
-        <h2 class="text-left">Five-Day Forecast:</h2>
-        <div id="day-1"></div>
-        <div id="day-2"></div>
-        <div id="day-3"></div>
-        <div id="day-4"></div>
-        <div id="day-5"></div>
       </div>
     </div>
+    <br />
+    <!-- popular city for searches -->
+    <h4>Popular Cities:</h4>
+    <div class="card mb-3">
+      <ul class="list-group list-group-flush">
+        <!-- list of cities that are also searchable -->
+        <li id="ausTX" class="list-group-item" data-location="Austin, TX">
+          Austin
+        </li>
+        <li id="nyNY" class="list-group-item" data-location="New York, NY">
+          New York
+        </li>
+        <li id="miamiFL" class="list-group-item" data-location="Miami, FL">
+          Miami
+        </li>
+        <li id="noLA" class="list-group-item" data-location="New Orleans, LA">
+          New Orleans
+        </li>
+        <li id="seattleWA" class="list-group-item" data-location="Seattle, WA">
+          Seattle
+        </li>
+        <li id="laCA" class="list-group-item" data-location="Los Angeles, CA">
+          Los Angeles
+        </li>
+        <li id="chiIL" class="list-group-item" data-location="Chicago, IL">
+          Chicago
+        </li>
+        <li id="denverCO" class="list-group-item" data-location="Denver, CO">
+          Denver
+        </li>
+        <li id="stLouisMO" class="list-group-item" data-location="St. Louis, MO">
+          St. Louis
+        </li>
+      </ul>
+    </div>
+    <!-- hidden elements to hold previous searches -->
+    <h4 id="search-title" style="display: none">Previous Searches:</h4>
+    <div id="search-div" class="card" style="display: none">
+      <ul class="search-ul list-group list-group-flush"></ul>
+    </div>
+    <!-- button to clear previous searches -->
+    <button id="clear-search" type="button" class="mt-3 float-left btn btn-info">
+      Clear Search
+    </button>
+    <!-- button to clear weather divs(current and five day) -->
+    <button id="clear-weather" type="button" class="mt-3 float-right btn btn-info">
+      Clear Weather
+    </button>
+  </aside>
+
+  <div class="clearfix">
+    <main class="container-sm container-md container-lg weather-display float-right border border-dark mt-3 mr-3 mb-3">
+      <!-- div to display current conditions -->
+      <h2 id="current-cond">Current Conditions:</h2>
+      <img id="current-weather-icon" SameSite="none" src="#" style="display: none" alt="current weather icon" />
+      <!-- displays current date -->
+      <h3 id="current-date" class="text-center"></h3>
+      <!-- displays current City and weather icon -->
+      <h2 id="current-city" class="p-2">City Date:</h2>
+      <br />
+      <div class="container bg-warning w-100 mb-3 p-3">
+        <section id="temp" class="d-inline-block" style="text-align: left">
+          <!-- displays current "feels like" -->
+          <h3 id="feels-like">Feels Like:</h3>
+          <!-- displays current tmeperature -->
+          <h3 id="current-temp">Temperature:</h3>
+        </section>
+        <section id="other" class="d-inline-block" style="text-align: left; margin-left: 150px">
+          <!-- displays current humidity -->
+          <h4 id="current-humidity">Humidity:</h4>
+          <!-- displays current wind speed -->
+          <h4 id="current-wind">wind speed:</h4>
+          <!-- displays current UV Index -->
+          <h4 id="uvi">UV Index:</h4>
+        </section>
+    </main>
+
+    <div class="five-day container-sm container-md container-lg float-right text-center mr-3 mt-3 p-3">
+      <!-- these divs are dynamically sourced with five day weather forecast information from javascript -->
+      <h2 class="text-left">Five-Day Forecast:</h2>
+      <div id="day-1"></div>
+      <div id="day-2"></div>
+      <div id="day-3"></div>
+      <div id="day-4"></div>
+      <div id="day-5"></div>
+    </div>
+  </div>
   </div>
 
-    <div class="w-100" style="height: 25%"></div>
+  <div class="w-100" style="height: 75px"></div>
 
-    <!-- footer borrowed from other projects -->
-    <footer
-      class="clearfix sticky-footer"
-      style="display: contents; border-color: black; background-color: grey"
-    >
-      <div class="container-fluid">
-        <div class="row text-center">
-          <div class="col">
-            <h3 id="social-media-header">Visit me on social media:</h3>
-          </div>
-        </div>
-        <!-- footer social media classes and styling from https://www.w3schools.com/howto/howto_css_social_media_buttons.asp -->
-        <div class="row">
-          <div class="col" id="social-media">
-            <a
-              href="https://www.linkedin.com/in/ericdtorres/"
-              class="fa fa-linkedin"
-              target="_blank"
-              rel="noopener noreferrer"
-            ></a>
-            <a
-              href="https://github.com/etorres-revature"
-              class="fa fa-github"
-              target="_blank"
-              rel="noopener noreferrer"
-            ></a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <p id="e_mail">
-              E-mail:
-              <a href="mailto:etorresnotary@gmail.com"
-                >etorresnotary@gmail.com</a
-              >
-            </p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <p id="copyright">&copy; 2020 Eric D. Torres Productions</p>
-          </div>
+  <div class="container">
+    <div id="mapid" SameSite="none"></div>
+  </div>
+
+  <div class="w-100" style="height: 15%"></div>
+
+  <!-- footer borrowed from other projects -->
+  <footer class="clearfix sticky-footer" style="display: contents; border-color: black; background-color: grey">
+    <div class="container-fluid">
+      <div class="row text-center">
+        <div class="col">
+          <h3 id="social-media-header">Visit me on social media:</h3>
         </div>
       </div>
-    </footer>
+      <!-- footer social media classes and styling from https://www.w3schools.com/howto/howto_css_social_media_buttons.asp -->
+      <div class="row">
+        <div class="col" id="social-media">
+          <a href="https://www.linkedin.com/in/ericdtorres/" class="fa fa-linkedin" target="_blank"
+            rel="noopener noreferrer"></a>
+          <a href="https://github.com/etorres-revature" class="fa fa-github" target="_blank"
+            rel="noopener noreferrer"></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <p id="e_mail">
+            E-mail:
+            <a href="mailto:etorresnotary@gmail.com">etorresnotary@gmail.com</a>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <p id="copyright">&copy; 2020 Eric D. Torres Productions</p>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.js"
-      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <!-- leaflet js mapping script -->
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-      crossorigin="anonymous"
-    ></script>
-    <script src="./app.js"></script>
-  </body>
+  <!-- jquery cdn link -->
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+
+  <!-- moment js library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+  <!-- bootstrap stuff -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+  <!-- weather dashboard app javascript -->
+  <script src="./app.js"></script>
+</body>
+
 </html>

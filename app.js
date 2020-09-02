@@ -4,6 +4,9 @@
 //opencage api call to reverse geocode
 //https://api.opencagedata.com/geocode/v1/json?q=chicago%2C%20IL&key=ef6e5295fc1b4624b73a959b2fee725e&language=en&pretty=1
 
+//mapbox/leaflet js map api key
+//pk.eyJ1IjoibG5jbG5nc2Z0IiwiYSI6ImNrZWtxMG1nZzBkY3EzMXF4d2Rtb3hlYWIifQ.K6-9fFjN39fFhkboDjjCdA
+
 //document ready function to have this run when document is created
 $(document).ready(function () {
   //global variables
@@ -75,6 +78,7 @@ $(document).ready(function () {
         //creating a search url on open weather with the latitute and longitude from open cage
         searchWeatherURL = baseWeatherURL + "&lon=" + long + "&lat=" + lat;
         // console.log(searchWeatherURL);
+
         //this ajax call waits until the first one comes back with the lat and long to run
         $.ajax({
           url: searchWeatherURL,
@@ -259,6 +263,7 @@ $(document).ready(function () {
               //appdning the five
               fiveDayDiv.append("<p>", "Humidity: " + fiveDayHumidity + "%");
             }
+            renderMap(lat, long);
           });
       });
   }
@@ -278,6 +283,30 @@ $(document).ready(function () {
         location +
         "</li>"
     );
+  }
+
+  function renderMap(lat, long) {
+    //making lat and long numbers
+    lat = parseInt(lat);
+    long = parseInt(long);
+
+    //create map variable
+    var myMap = L.map("mapid").setView([lat, long], 12);
+
+    //stuff from leaflet.js
+    L.tileLayer(
+      "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
+      {
+        attribution:
+          'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 8,
+        id: "mapbox/streets-v11",
+        tileSize: 512,
+        zoomOffset: -1,
+        accessToken:
+          "pk.eyJ1IjoibG5jbG5nc2Z0IiwiYSI6ImNrZWtxMG1nZzBkY3EzMXF4d2Rtb3hlYWIifQ.K6-9fFjN39fFhkboDjjCdA",
+      }
+    ).addTo(myMap);
   }
 
   //funciton to clear searched items
@@ -429,6 +458,7 @@ $(document).ready(function () {
     getLatLong(location);
     //add this location into local storage as last searched
     insertStorage(location);
+    renderMap(lat, long)
   });
 
   //click event for the clear search button
