@@ -1,4 +1,4 @@
-# [Weather_Dashboard](https://etorres-revature.github.io/Weather_Dashboard/)
+# [Weather Dashboard](https://etorres-revature.github.io/Weather_Dashboard/)
 
 > I have seen many storms in my life. Most
 > storms have caught me by surprise, so I 
