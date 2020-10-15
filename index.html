@@ -79,13 +79,15 @@
       <!-- </form> -->
     </div>
   </nav>
+
   <!-- header -->
   <header class="text-center">
     <h1 class="display-4 font-weight-bold">Weather Dashboard</h1>
   </header>
+
   <!-- aside to hold searched items -->
   <aside
-    class="weather-search container-sm container-md container-lg float-left clearfix border border-dark p-3 mt-3 ml-4">
+    class="col-md-12 weather-search container-sm container-md container-lg float-left clearfix border border-dark p-3 mt-3 ml-4">
     <h4 class="">Search for a City:</h4>
     <div class="input-group">
       <!-- text input for searching city -->
@@ -149,7 +151,7 @@
   </aside>
 
   <div class="clearfix">
-    <main class="container-sm container-md container-lg weather-display float-right border border-dark mt-3 mr-3 mb-3">
+    <main class="col-md-12 container-sm container-md container-lg weather-display float-right border border-dark mt-3 mr-3 mb-3">
       <!-- div to display current conditions -->
       <h2 id="current-cond">Current Conditions:</h2>
       <img id="current-weather-icon" SameSite="none" src="#" style="display: none" alt="current weather icon" />
@@ -175,7 +177,7 @@
         </section>
     </main>
 
-    <div class="five-day container-sm container-md container-lg float-right text-center mr-3 mt-3 p-3">
+    <div class="col-md-12 five-day container-sm container-md container-lg float-right text-center mr-3 mt-3 p-3">
       <!-- these divs are dynamically sourced with five day weather forecast information from javascript -->
       <h2 class="text-left">Five-Day Forecast:</h2>
       <div id="day-1"></div>

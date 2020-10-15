@@ -60,7 +60,7 @@ $(document).ready(function () {
       })
     )
       //open cage js promise
-      .then(function (geoCodeData) {
+      .then( (geoCodeData) => {
         // console.log("this is geocode data", geoCodeData);
         // console.log(searchGeoCodeURL);
         // console.log("this is latitude", geoCodeData.results[0].geometry.lat)
@@ -85,7 +85,7 @@ $(document).ready(function () {
           method: "GET",
         })
           //current weather js promise
-          .then(function (weatherData) {
+          .then( (weatherData) => {
             console.log("this is weather data", weatherData);
             //setting current temp from returned object
             currentTemp = weatherData.current.temp;
@@ -413,7 +413,7 @@ $(document).ready(function () {
   }
 
   //jQuery to run a function when the search button is clicked
-  $("#searchBtn").on("click", function () {
+  $("#searchBtn").on("click", () => {
     event.preventDefault();
     //setting value of location
     let location = $("#inputSearch").val().trim();
@@ -462,14 +462,14 @@ $(document).ready(function () {
   });
 
   //click event for the clear search button
-  $("#clear-search").on("click", function () {
+  $("#clear-search").on("click", () => {
     event.preventDefault();
     //runs function that clears the ul and hides previous search elements, also clears local storage
     clearSearch();
   });
 
   //click event for the clear weahter button
-  $("#clear-weather").on("click", function () {
+  $("#clear-weather").on("click", () => {
     event.preventDefault();
     //clears out the current weather and five day weather divs
     getEmpty();
